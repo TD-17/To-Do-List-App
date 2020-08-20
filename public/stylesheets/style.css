@@ -5,10 +5,82 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #00a7e9;
+    font-family: 'Candal', sans-serif;
+}
+
 .todo-container
 {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.todo-container h2{
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 5rem;
+    text-shadow: 1px 1px #eceaea;
+    margin-bottom: 0.5rem;
+}
+
+.todo-container .todo-header input
+{
+   width: 400px;
+   border: 1px solid #e2e2e2;
+   box-shadow: 2px 2px 10px 0.5px #a0a0a0;
+   border-radius: 5px;
+   margin-bottom: 0.5rem;
+}
+
+.todo-container .todo-header input:focus{
+    outline: none;
+}
+
+.todo-container .todo-header button{
+    background: black;
+    border: none;
+    border-radius: 6px;
+}
+
+.todo-container .todo-header .fa-plus
+{
+    padding: 4px;
+    color: white;
+}
+
+.todo-container .todo-list
+{
+    list-style: none;
+}
+
+.todo-container .todo-list .todo-list-item
+{
+    display: flex;
+    justify-content: space-between;
+    background: #4646468a;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* .todo-container .todo-list-item .btn
+{
+
+} */
+
+.todo-container .todo-list-item .btn .fa-edit
+{
+    text-decoration: none;
+    color: #80ff00;
+}
+
+.todo-container .todo-list-item .btn .fa-times
+{
+    text-decoration: none;
+    color: #ff006a;
+    margin-left: 0.5rem;
 }
