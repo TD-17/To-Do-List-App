@@ -46,6 +46,10 @@ body{
     border-radius: 6px;
 }
 
+.todo-container .todo-header button:focus{
+    outline: none;
+}
+
 .todo-container .todo-header .fa-plus
 {
     padding: 4px;
