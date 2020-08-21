@@ -1,9 +1,21 @@
 const express = require("express");
 const app = express();
+const mongoose = require('mongoose');
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 
 app.use('/static', express.static('public'));
 
+//this will allow us to use data of request using body property
 app.use(express.urlencoded({ extended: true }));
+
+mongoose.set("useFindAndModify", false);
+mongoose.connect(process.env.DB_CONNECT, { useUnifiedTopology: true, useNewUrlParser: true }, () => {
+console.log("Connected to db!");
+app.listen(3000, () => console.log("Server Up and running..."));
+});
 
 //view engine configuration
 app.set("view engine", "ejs");
@@ -16,7 +28,3 @@ app.post('/',(req, res) => {
     console.log(req.body);
 });
     
-
-
-
-app.listen(3000, () => console.log("Server is running...."));
