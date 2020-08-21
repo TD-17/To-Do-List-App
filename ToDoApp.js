@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require("dotenv");
+const TodoTask = require('./models/TodoTask');
 
 dotenv.config();
 
@@ -24,7 +25,13 @@ app.get('/', (req, res) => {
     res.render('todo.ejs');
 })
 
-app.post('/',(req, res) => {
-    console.log(req.body);
-});
-    
+app.post('/', (req, res) => {
+    const todoTask = new TodoTask({
+    content: req.body.content
+    });
+
+    todoTask.save(function (err) {
+        if (err) return handleError(err);
+      });
+    res.redirect("/");
+}); 
