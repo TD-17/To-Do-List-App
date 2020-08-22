@@ -19,18 +19,20 @@ integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7
 <% if (details._id == idTask) { %>
 <li class="todo-list-item">
 <form action="/edit/<%= details._id %>" method="POST">
-<input type="text" value="<%= details.content %>" name="content">
-<button type="submit">Confirm</button>
+<input type="text" value="<%= details.content %>" name="content" class="editinput">
+<button type="submit" class="confirm">Confirm</button>
 <a href="/" class="cancel">Cancel</a>
 </form>
 </li>
 <% } else { %>
 <li class="todo-list-item">
 <div class="todo-list-item-name"><%= details.content %></div>
-<a href="/edit/<%= details._id %>" class="edit"> <span class="fas fa-edit"></span>
-</a>
-<a href="/remove/<%= details._id %>" class="remove"> <span class="fas fa-times"></span>
-</a>
+<div class="btn">
+    <a href="/edit/<%= details._id %>" class="edit"> <span class="fas fa-edit"></span>
+    </a>
+    <a href="/remove/<%= details._id %>" class="remove"> <span class="fas fa-times"></span>
+    </a>
+</div>
 </li>
 <% } %>
 <% }) %>
