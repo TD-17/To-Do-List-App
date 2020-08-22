@@ -39,6 +39,8 @@ app.post('/', (req, res) => {
     res.redirect("/");
 }); 
 
+//edit
+
 app.route("/edit/:id")
 .get((req, res) => {
     const id = req.params.id;
@@ -49,6 +51,15 @@ app.route("/edit/:id")
 .post((req, res) => {
     const id = req.params.id;
     TodoTask.findByIdAndUpdate(id, { content: req.body.content }, err => {
+    if (err) return res.send(500, err);
+    res.redirect("/");
+    });
+});
+
+//remove
+app.route("/remove/:id").get((req, res) => {
+    const id = req.params.id;
+    TodoTask.findByIdAndRemove(id, err => {
     if (err) return res.send(500, err);
     res.redirect("/");
     });
