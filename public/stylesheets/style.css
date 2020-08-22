@@ -17,6 +17,7 @@ body{
     align-items: center;
     flex-direction: column;
     padding-top: 15rem;
+    margin-bottom: 15rem;
 }
 
 .todo-container h2{
@@ -90,6 +91,12 @@ body{
     padding: 2px;
     font-family: 'Candal', sans-serif;
     font-size: 0.8rem;
+    border: none;
+}
+
+.todo-list .todo-list-item .confirm:focus
+{
+    outline: none;
     border: none;
 }
 
