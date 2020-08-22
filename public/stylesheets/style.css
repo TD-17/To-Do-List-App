@@ -69,12 +69,13 @@ body{
     padding: 0.5rem;
     border-radius: 5px;
     color: #fff;
+    margin-bottom: 0.2rem;
 }
 
-/* .todo-container .todo-list-item .btn
+.todo-list-item-name
 {
-
-} */
+    color: #ffffff;
+}
 
 .todo-container .todo-list-item .btn .fa-edit
 {

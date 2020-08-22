@@ -20,7 +20,7 @@
         <ul class="todo-list">
             <% todoTasks.forEach(details => { %>
             <li class="todo-list-item">
-            <div class="todo-list-item-name"><% details.content %></div>
+            <div class="todo-list-item-name"><%= details.content %></div>
             <div class="btn">         
                 <a href="/edit/<%= details._id %>" class="edit">
                 <span class="fas fa-edit"></span>
